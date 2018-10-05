@@ -4,7 +4,7 @@
         <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 search-f-wrap">
           <div class="form-group">
             <div class="input-group">
-              <input (keyup.enter)="changeSearchState('active'); sendSearch(videoSearch.value)" #videoSearch type="text" class="form-control" placeholder="Pesquisar">
+              <input (keyup.enter)="changeSearchState('active'); sendSearch(videoSearch.value)" #videoSearch type="text" class="form-control" placeholder="Pesquisar termo...">
               <div class="input-group-addon v-seach-submit-btn"  (click)="changeSearchState('active'); sendSearch(videoSearch.value)"><i class="glyphicon glyphicon-search"></i></div>
             </div>
           </div>

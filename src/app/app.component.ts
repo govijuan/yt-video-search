@@ -30,20 +30,21 @@ import { trigger, state, style, animate, transition , keyframes} from '@angular/
   
 })
 export class AppComponent {
+  title = 'Busca de Vídeo'
   constructor(private _searchListService: SearchListService){}
-  searchSubmitted: boolean = false;
-  pageSumbitted:boolean = false;
-  vResultList: any[];
-  vResults: any[];
+  searchSubmitted: boolean = false
+  pageSumbitted:boolean = false
+  vResultList: any[]
+  vResults: any[]
 
   // Para a paginação
-  currentSearchTerm:string;
-  nextPageToken: string;
-  prevPageToken: string;
-  currentPageNum: number = 1;
-  pageCoutArray: any = [1,2,3];
-  maxPageNumber: number;
-  public totalSearchResults: number;
+  currentSearchTerm:string
+  nextPageToken: string
+  prevPageToken: string
+  currentPageNum: number = 1
+  pageCoutArray: any = [1,2,3]
+  maxPageNumber: number
+  public totalSearchResults: number
 
   // Para Video Detalhado
   detailedVideo: string;
@@ -65,14 +66,9 @@ export class AppComponent {
       () => {
         this.searchSubmitted = true;
         if(!this.prevPageToken){
-          this.pageSumbitted = false;
-          
+          this.pageSumbitted = false;   
         }
-        //console.log('Page Token: ' + this.nextPageToken + ' -- PageSubmited: ' + this.pageSumbitted);
-        //console.log('Current Page Number: ' + this.currentPageNum + ' -- Page Count Array: ' + this.pageCoutArray);
-
         this.setTotalPagesCount(this.totalSearchResults);
-        //console.log('Total Search Result: ' + this.totalSearchResults + ' -- Maximum page number: ' + this.maxPageNumber);
       }
     )
   }

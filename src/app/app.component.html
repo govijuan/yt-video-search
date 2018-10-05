@@ -1,3 +1,4 @@
+<section class="app-title text-center"><h1>{{title}}</h1></section>
 <app-search-form (sumbittedValue) = "videoSearchSubmit($event)"></app-search-form>
 <section *ngIf="searchSubmitted"  class="search-result-list-section">
   <div *ngIf="vResultList.length > 0" class="container">
@@ -46,9 +47,6 @@
     </div>
   </div>
 </section>
-<div class="container">
-  <app-video-list-slider [videoSliderData]="vResultList" *ngIf="searchSubmitted"></app-video-list-slider>
-</div>
 <app-detailed-video *ngIf="currVideoObject" [videoData]= "currVideoObject" [@detailedVideo]="detailedVideo" (notDetailedView)="setNotDetailedView($event)" class="currVideoSection"></app-detailed-video>
 
 

@@ -8,7 +8,6 @@ import { VideoSearchListComponent } from './video-search-list/video-search-list.
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchListService } from './search-list.service';
 import { DetailedVideoComponent } from './detailed-video/detailed-video.component';
-import { VideoListSliderComponent } from './video-list-slider/video-list-slider.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { VideoListSliderComponent } from './video-list-slider/video-list-slider.
     VideoSearchListComponent,
     SearchFormComponent,
     DetailedVideoComponent,
-    VideoListSliderComponent,
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule

@@ -1,0 +1,22 @@
+.jc-carousel-section{
+  width: 100%;
+  .slider-list-frame{
+    overflow: hidden;
+  }
+  .slide-list-container{
+    .slide-container{
+      float: left;
+      //width: 33.33333%;
+      padding: 0 7.5px;
+      .slider-img-container{
+        @media(min-width: 1200px){
+        }
+        img{
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}

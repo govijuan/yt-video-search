@@ -1,0 +1,48 @@
+<div class="back-link-wrap">
+  <div (click)="sendNotDetaileView()" class="d-video-back-link"><i class="glyphicon glyphicon-chevron-left"></i></div>
+</div>
+<div class="container video-details-wrap">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-xl-6 col-xl-offset-3">
+      <div class="row"><h4 class="d-video-title">{{videoData.snippet.title}}</h4></div>
+      <div class="row">
+        <div class="embed-responsive embed-responsive-16by9" >
+          <iframe class="embed-responsive-item"  [src]="sanitizedVideoUrl(videoData.id)"></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="nome-canal col-xs-6 col-sm-6 col-md-6">{{videoData.snippet.channelTitle}}</div>
+        <div class="likes-wrap col-xs-6 col-sm-6 col-md-6 text-right">
+          <span class="likes">
+            <i class="like-icon">
+                <svg version="1.1" id="Layer_21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="-489 489 24 24" style="enable-background:new -489 489 24 24;" xml:space="preserve">
+                  <rect x="-487" y="499" width="3" height="10"/>
+                  <path d="M-470,498h-5v-5c0-0.6-0.4-1-1-1h-1l-4.3,5.4c-0.4,0.5-0.7,1.2-0.7,1.9v7.7c0,1.1,0.9,2,2,2h6.4c1.1,0,2.2-0.6,2.7-1.7
+                  l2.9-5.8V500C-468,498.9-468.9,498-470,498z"/>
+                </svg>
+            </i>
+            {{videoData.statistics.likeCount}}
+          </span>
+          <span class="deslikes">
+              <i class="deslike-icon">
+                  <svg version="1.1" id="Layer_21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="-489 489 24 24" style="enable-background:new -489 489 24 24;" xml:space="preserve">
+                    <rect x="-487" y="499" width="3" height="10"/>
+                    <path d="M-470,498h-5v-5c0-0.6-0.4-1-1-1h-1l-4.3,5.4c-0.4,0.5-0.7,1.2-0.7,1.9v7.7c0,1.1,0.9,2,2,2h6.4c1.1,0,2.2-0.6,2.7-1.7
+                    l2.9-5.8V500C-468,498.9-468.9,498-470,498z"/>
+                  </svg>
+              </i>
+              {{videoData.statistics.dislikeCount}}
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="video-description">{{videoData.snippet.description}}</div>
+      </div>
+      <div class="row">
+        <div class="views-count"><i class="glyphicon glyphicon-eye-open"></i> {{videoData.statistics.viewCount}}</div>
+      </div>
+    </div>
+  </div>
+</div>

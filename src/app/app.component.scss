@@ -1,0 +1,78 @@
+.search-result-list-section{
+  padding: 15px 0;
+  .list-item-wrap{
+    margin-bottom: 30px;
+    @media (max-width: 767px){
+      max-width: 350px;
+      margin-left: calc((100% - 350px) / 2);
+    }
+    .video-thumbnail{
+      height: 202.5px;
+      overflow: hidden;
+      @media(min-width: 992px) and (max-width: 1199px){
+        height: 165px;
+      }
+      @media (min-width: 768px) and (max-width: 991px){
+        height: 123px;
+      }
+      @media(max-width:767px){
+        height: 180px;
+      }
+      img{
+        position: relative;
+        top: -33.75px;
+        width: 100%;
+        height: auto;
+        display: block;
+        @media(min-width: 992px) and (max-width: 1199px){
+          top: -28px;
+        }
+        @media (min-width: 768px) and (max-width: 991px){
+          top: -21px;
+        }
+        @media(max-width:767px){
+          top: -30px;
+        }
+      }
+    }
+    .v-title-wrap{
+      h4{
+        height: 40px;
+        overflow: hidden;
+      }
+    }
+    .detalhes-video-link{
+      text-transform: uppercase;
+    }
+    .v-description, .v-chanel-name{
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .v-chanel-name{
+      font-weight: bold;
+    }
+    .v-description{
+      height: 69px;
+      overflow: hidden;
+    }
+  }
+}
+.currVideoSection{
+  top: 0;
+  position: absolute;
+  height: 100%;
+  background: white;
+  width: 0;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Styles for the No search results div */
+.no-search-results-wrap{
+  .sadface{
+    display: inline-block;
+    transform: rotate(90deg);
+    position: relative;
+    font-size: 40px;
+  }
+}

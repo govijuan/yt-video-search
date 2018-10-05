@@ -1,0 +1,55 @@
+<app-search-form (sumbittedValue) = "videoSearchSubmit($event)"></app-search-form>
+<section *ngIf="searchSubmitted"  class="search-result-list-section">
+  <div *ngIf="vResultList.length > 0" class="container">
+    <div class="row">
+      <div *ngFor="let videoItem of vResultList" class="col-sm-4 col-md-4 list-item-wrap">
+        <div class="video-thumbnail">
+          <img src="{{videoItem.snippet.thumbnails.high.url}}" alt="{{videoItem.snippet.title}}">
+        </div>
+        <div class="v-title-wrap">
+          <h4>{{videoItem.snippet.title}}</h4>
+        </div>
+        <div class="v-chanel-name">
+          {{videoItem.snippet.channelTitle}}
+        </div>
+        <div class="v-description">
+          {{videoItem.snippet.description}}
+        </div>
+        <button (click)="showDetailedVideo(videoItem.id.videoId)" class="btn btn-success detalhes-video-link">Detalhes do Vídeo</button>
+      </div>
+    </div>
+  </div>
+  <nav *ngIf="vResultList.length > 0" aria-label="Page navigation" class="text-center">
+    <ul class="pagination">
+      <li [ngClass]="{ 'disabled' : currentPageNum == 1}">
+        <a  aria-label="Previous">
+          <span (click)="videoSearchSubmit(currentSearchTerm, prevPageToken);resetPagination(-1)" aria-hidden="true"><i class="glyphicon glyphicon-chevron-left"></i></span>
+        </a>
+      </li>
+      <li [ngClass]="{ 'active' : currentPageNum == pageLink }" *ngFor="let pageLink of pageCoutArray"><a href="#">{{pageLink}}</a></li>
+      <li [ngClass]="{ 'disabled' : currentPageNum == maxPageNumber}">
+        <a aria-label="Next">
+          <span (click)="videoSearchSubmit(currentSearchTerm, nextPageToken); pageSumbitted = true; resetPagination(1)" aria-hidden="true"><i class="glyphicon glyphicon-chevron-right"></i></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div *ngIf="vResultList.length <= 0" class="no-search-results-wrap">
+    <div class="container text-center">
+      <div class="row">
+        <div class="sadface">:(</div>
+      </div>
+      <div class="row">
+        <p>Não encontramos vídeos com o termo buscado.</p>
+        <p>Utilize outras palavras-chave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <app-video-list-slider [videoSliderData]="vResultList" *ngIf="searchSubmitted"></app-video-list-slider>
+</div>
+<app-detailed-video *ngIf="currVideoObject" [videoData]= "currVideoObject" [@detailedVideo]="detailedVideo" (notDetailedView)="setNotDetailedView($event)" class="currVideoSection"></app-detailed-video>
+
+
+

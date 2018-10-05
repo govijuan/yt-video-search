@@ -1,0 +1,93 @@
+/* For responsive video embed */
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+  margin-bottom: 15px;
+}
+.embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
+
+/* Back Link Styles */
+.back-link-wrap{
+  padding:15px 15px 0;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  .d-video-back-link{
+    padding: 4px 7px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    display: inline-block;
+  }
+}
+
+/* General layout styles */
+.video-details-wrap{
+  @media (max-width: 767px){
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 37px;
+  }
+  .d-video-title{
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+/* Video general Info Styles */
+.likes-wrap{
+  .likes, .deslikes{
+    font-weight: bold;
+    i{
+      height: 16px;
+      width: 16px;
+      display: inline-block;
+      position: relative;
+      top: 3px; 
+      svg{
+        width: 100%;
+      }
+    }
+  }
+  .likes{
+    margin-right: 20px;
+  }
+  .deslike-icon{
+    transform: rotate(180deg);
+  }
+}
+.nome-canal{
+  padding-left:0;
+  font-weight: bold;
+}
+.nome-canal, .likes-wrap, .video-description{
+  margin-bottom: 15px;
+}
+.video-description{
+  max-height: 400px;
+  overflow: hidden;
+}
+.views-count{
+  font-weight: bold;
+}

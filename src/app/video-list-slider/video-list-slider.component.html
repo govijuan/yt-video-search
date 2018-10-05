@@ -1,0 +1,13 @@
+<section id="carousel-container" class="jc-carousel-section">
+  <nav class="carousel-nav">
+    <div class="pull-left prev-button"><i class="glyphicon glyphicon-chevron-left"></i></div>
+    <div class="pull-right next-button"><i class="glyphicon glyphicon-chevron-right"></i></div>
+  </nav>
+  <div class="slider-list-frame">
+    <div class="slide-list-container">
+      <div *ngFor="let videoSlide of videoSliderData" class="slide-container">
+        <div class="slider-img-container"><img src="{{videoSlide.snippet.thumbnails.high.url}}"/></div>
+      </div>
+    </div>
+  </div>
+</section>

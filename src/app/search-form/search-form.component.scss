@@ -1,0 +1,16 @@
+.video-s-form-section{
+  padding-top: 45px;
+  padding-bottom: 15px;
+}
+.v-seach-submit-btn{
+  cursor: pointer;
+  &:hover, &:active{
+    background-color: #cccccc; 
+  }
+}
+.search-f-wrap{
+  @media(max-width: 767px){
+    max-width: 350px;
+    margin-left: calc((100% - 350px) / 2);
+  }
+}
